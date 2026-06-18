@@ -1,0 +1,28 @@
+// Aguarda o documento HTML carregar completamente
+document.addEventListener("DOMContentLoaded", () => {
+
+    // 1. Ação para o botão principal do Banner (Hero)
+    const botaoHero = document.getElementById("btn-hero");
+    if (botaoHero) {
+        botaoHero.addEventListener("click", () => {
+            // Link sobre o conceito de agricultura sustentável
+            window.open("https://pt.wikipedia.org/wiki/Agricultura_sustent%C3%A1vel", "_blank");
+        });
+    }
+
+    // 2. Lógica para os botões de todos os cards dinamicamente
+    const botoesCards = document.querySelectorAll(".btn-card");
+    
+    botoesCards.forEach(botao => {
+        botao.addEventListener("click", (evento) => {
+            // Pega o link customizado que inserimos no atributo "data-url" de cada botão no HTML
+            const urlDestino = evento.target.getAttribute("data-url");
+            
+            if (urlDestino) {
+                // Abre a URL capturada em uma nova aba (_blank)
+                window.open(urlDestino, '_blank');
+            }
+        });
+    });
+
+});
