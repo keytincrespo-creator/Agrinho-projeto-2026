@@ -1,0 +1,185 @@
+/* --- Configurações Gerais --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --lilas: #b537f2;
+    --rosa: #ff2a85;
+    --verde: #00ff66;
+    --fundo-escuro: #0b0314;
+    --fundo-card: #1a092b;
+}
+
+body {
+    background-color: var(--fundo-escuro);
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- Menu Superior --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    background: rgba(11, 3, 20, 0.85);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 2px solid var(--lilas);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--verde);
+    text-shadow: 0 0 10px var(--verde);
+}
+
+.logo span {
+    color: var(--rosa);
+    text-shadow: 0 0 10px var(--rosa);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--rosa);
+    text-shadow: 0 0 8px var(--rosa);
+}
+
+/* --- Banner Principal (Hero) --- */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: linear-gradient(rgba(11, 3, 20, 0.5), rgba(11, 3, 20, 0.9)), 
+                url('https://images.unsplash.com/photo-1530595467537-0b5996c41f2d?auto=format&fit=crop&q=80&w=1920') no-repeat center center/cover;
+}
+
+.hero-content h1 {
+    font-size: 3.8rem;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: var(--verde);
+    text-shadow: 0 0 15px var(--verde);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin: 0 auto 35px auto;
+    color: #e0e0e0;
+    line-height: 1.6;
+}
+
+/* --- Botão Principal --- */
+.btn-vibrante {
+    background: linear-gradient(45deg, var(--lilas), var(--rosa));
+    color: white;
+    border: none;
+    padding: 16px 40px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 0 15px var(--rosa);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-vibrante:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px var(--lilas), 0 0 12px var(--verde);
+}
+
+/* --- Seção de Blocos/Cards --- */
+.conteudo {
+    padding: 100px 8% 80px 8%;
+    text-align: center;
+}
+
+.conteudo h2 {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+}
+
+.conteudo h2 span {
+    color: var(--rosa);
+    text-shadow: 0 0 10px var(--rosa);
+}
+
+.grid-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.card {
+    background-color: var(--fundo-card);
+    border: 2px solid var(--lilas);
+    border-radius: 20px;
+    padding: 30px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card:hover {
+    border-color: var(--verde);
+    transform: translateY(-12px);
+    box-shadow: 0 0 25px rgba(0, 255, 102, 0.25);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    border: 2px solid var(--rosa);
+}
+
+.card h3 {
+    color: var(--verde);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    text-shadow: 0 0 5px rgba(0, 255, 102, 0.3);
+}
+
+.card p {
+    font-size: 1rem;
+    color: #dddddd;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* --- Botões dos Cards --- */
+.btn-card {
+    background: transparent;
+    border: 2px solid var(--verde);
+    color: var(--verde);
+    padding: 12px 28px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: 0
